@@ -1,5 +1,9 @@
 ---
+import Navigation from "../components/Navigation.astro";
 
+import "../styles/global.css";
+
+const pageTitle = "Blogs";
 ---
 
 <html lang="en">
@@ -8,19 +12,18 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Blog</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <h1>My Blogs</h1>
-    <h2>Blog 101</h2>
-    <h3>Category: Social Interactions</h3>
-    <h4>Topic:</h4><em>The cues from titbits of daily interactions.</em>
-    <p>
-      Often we wonder, what it is to be like all knowing. Inadvertently so, our
-      lives are woven together with the threads of social intricacies.
-    </p>
+    <Navigation />
+    <h1>{pageTitle}</h1>
+    <p>Topics from the corners of our mind..</p>
+    <ul>
+      <li>
+        <a href="/posts/post-1/">Blog 101</a>
+        <a href="/posts/post-2/">Blog 102</a>
+        <a href="/posts/post-3/">Blog 103</a>
+      </li>
+    </ul>
   </body>
 </html>

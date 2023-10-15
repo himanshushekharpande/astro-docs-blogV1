@@ -1,5 +1,18 @@
 ---
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
 
+const pageTitle = "About us";
+
+const users = {
+  dev: "Himanshu Shekhar Pandey",
+};
+
+const categories = ["Social Interactions", "Psychology", "Wellness"];
+
+const catColor = "#f43f5e";
+const fontWeight = "bold";
+const textCase = "upperCase";
 ---
 
 <html lang="en">
@@ -8,16 +21,46 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>About</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <h1>About us!</h1>
+    <Navigation />
+    <h1>{pageTitle}</h1>
     <p>
       This a blog starter kit from Astro docs. It will serve as a solutions of
       life altering, complex problems.
     </p>
+    <ul>
+      <li>My name is {users.dev}.</li>
+      <li>
+        Here we discuss plethora of topics for adults from all parts of the
+        world.
+      </li>
+      {
+        categories.length >= 3 && (
+          <li>
+            Some of the topics we discuss belongs to: {categories[0]},{" "}
+            {categories[1]}, {categories[2]} and more...
+          </li>
+        )
+      }
+    </ul>
+    <p>Topics discussed belong to categories such as:</p>
+    <ul>
+      {categories.map((categories) => <li class="categories">{categories}</li>)}
+    </ul>
   </body>
 </html>
+
+<style define:vars={{ catColor, fontWeight, textCase }}>
+  h1 {
+    color: teal;
+    font-size: 4rem;
+  }
+
+  .categories {
+    color: var(--catColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
