@@ -1,20 +1,27 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import "../styles/global.css";
-
-const pageTitle = "kuunji --tbd";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting";
+const pageTitle = "Sloppd";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Navigation />
-    <h1>{pageTitle}</h1>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Keep the threads open to stop the slips in life..</h2>
+  <!-- <Greeting messages={["Hi", "नमस्ते", "Hola", "ওহে", "안녕하세요"]} /> -->
+  <Greeting
+    client:visible
+    messages={[
+      "Hi",
+      "नमस्ते",
+      "Hola",
+      "ওহে",
+      "안녕하세요",
+      "Salve",
+      "Sawubona",
+      "Kia ora",
+      "Chibai",
+      "你好",
+      "שלום",
+      "سلام",
+    ]}
+  />
+</BaseLayout>

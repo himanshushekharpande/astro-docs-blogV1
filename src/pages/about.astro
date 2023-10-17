@@ -1,6 +1,5 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About us";
 
@@ -10,49 +9,37 @@ const users = {
 
 const categories = ["Social Interactions", "Psychology", "Wellness"];
 
-const catColor = "#f43f5e";
-const fontWeight = "bold";
+// const catColor = "#f43f5e";
+// const fontWeight = "bold";
 const textCase = "upperCase";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Navigation />
-    <h1>{pageTitle}</h1>
-    <p>
-      This a blog starter kit from Astro docs. It will serve as a solutions of
-      life altering, complex problems.
-    </p>
-    <ul>
-      <li>My name is {users.dev}.</li>
-      <li>
-        Here we discuss plethora of topics for adults from all parts of the
-        world.
-      </li>
-      {
-        categories.length >= 3 && (
-          <li>
-            Some of the topics we discuss belongs to: {categories[0]},{" "}
-            {categories[1]}, {categories[2]} and more...
-          </li>
-        )
-      }
-    </ul>
-    <p>Topics discussed belong to categories such as:</p>
-    <ul>
-      {categories.map((categories) => <li class="categories">{categories}</li>)}
-    </ul>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    This a blog starter kit from Astro docs. It will serve as a solutions of
+    life altering, complex problems.
+  </p>
+  <ul>
+    <li>My name is {users.dev}.</li>
+    <li>
+      Here we discuss plethora of topics for adults from all parts of the world.
+    </li>
+    {
+      categories.length >= 3 && (
+        <li>
+          Some of the topics we discuss belongs to: {categories[0]},{" "}
+          {categories[1]}, {categories[2]} and more...
+        </li>
+      )
+    }
+  </ul>
+  <!-- <p>Topics discussed belong to categories such as:</p>
+  <ul>
+    {categories.map((categories) => <li class="categories">{categories}</li>)}
+  </ul> -->
+</BaseLayout>
 
-<style define:vars={{ catColor, fontWeight, textCase }}>
+<style define:vars={{ textCase }}>
   h1 {
     color: teal;
     font-size: 4rem;
