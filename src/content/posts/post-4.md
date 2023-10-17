@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/MarkdownPostLayout.astro"
 title: "Blog 104"
 pubDate: 2023-10-19
 description: "Creating a blog post archive"

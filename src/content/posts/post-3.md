@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/MarkdownPostLayout.astro"
 title: "Blog 103"
 pubDate: 2023-10-17
 description: "The dysmorphism of over indulgence."

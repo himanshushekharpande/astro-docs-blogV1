@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>Published on: {frontmatter.pubDate.slice(0, 10)}</p>
+  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <p transition:animate={fade({ duration: "2s" })}>{frontmatter.description}</p>
   <p>Written by: <a href="/about/">{frontmatter.author}</a></p>
   <div class="tags">

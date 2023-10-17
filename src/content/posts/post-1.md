@@ -1,13 +1,12 @@
 ---
-layout: "../../layouts/MarkdownPostLayout.astro"
-title: "Blog 102"
+title: "Blog 101"
 pubDate: 2023-10-15
-description: "The subconscious ruler of our daily lives"
+description: "Discuss the cues from titbits of daily interactions"
 author: "Himanshu Shekhar Pandey"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "The full Astro logo."
-tags: ["psychology", "slope"]
+tags: ["social", "slope"]
 ---
 
       Often we wonder, what it is to be like all knowing. Inadvertently so, our
